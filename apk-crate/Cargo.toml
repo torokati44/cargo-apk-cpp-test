@@ -16,6 +16,13 @@ ndk = { version = "0.6.0", features = ["trace"] }
 ndk-context = "0.1.0"
 ndk-glue = { version = "0.6.0", features = ["logger"] }
 
+c-crate = { path = "../c-crate" }
+cpp-crate = { path = "../cpp-crate", optional = true}
+
+[features]
+with_cpp = ["cpp-crate"]
+default = ["with_cpp"]
+
 [package.metadata.android.sdk]
 build_targets = [ "aarch64-linux-android"] # also "armv7-linux-androideabi"
 
